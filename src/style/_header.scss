@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  padding: 2.6rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  margin-bottom: 2.6rem;
+  font-size: 3.8rem;
+  letter-spacing: 1.6rem;
+}
+
+.navbar {
+  width: 100%;
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
