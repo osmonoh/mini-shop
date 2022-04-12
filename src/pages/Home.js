@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 
 import table1 from "../images/table1.jpeg";
 import pot1 from "../images/pot1.jpeg";
@@ -28,6 +29,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <Carousel />
     </div>
   );
 };

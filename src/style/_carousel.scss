@@ -1,0 +1,39 @@
+.carousel {
+  margin-bottom: 40px;
+
+  &-card {
+    width: 100%;
+    max-width: 800px;
+    max-height: 260px;
+    margin: 0 auto;
+    display: flex !important;
+
+    &-text {
+      width: 50%;
+      padding: 16px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .review {
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      h3 {
+        text-transform: uppercase;
+      }
+    }
+
+    &-image {
+      width: 50%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 30%;
+      }
+    }
+  }
+}
