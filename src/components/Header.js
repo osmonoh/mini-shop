@@ -5,11 +5,21 @@ const Header = () => {
     <header className="header center-box">
       <h1 className="heading">MINI</h1>
       <nav className="navbar">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Blog</a>
-        <a href="#">Login/Register</a>
-        <a href="#">Contact</a>
+        <a href="#" className="navbar-link">
+          Home
+        </a>
+        <a href="#" className="navbar-link">
+          Shop
+        </a>
+        <a href="#" className="navbar-link">
+          Blog
+        </a>
+        <a href="#" className="navbar-link">
+          Login/Register
+        </a>
+        <a href="#" className="navbar-link">
+          Contact
+        </a>
       </nav>
     </header>
   );
