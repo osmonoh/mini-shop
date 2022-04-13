@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Stars from "../components/Stars";
+
 import products from "../data/products.js";
 
 const Shop = () => {
@@ -12,8 +14,9 @@ const Shop = () => {
             <div className="shop-item-img">
               <img src={item.img} alt={item.name} />
             </div>
-            <h3>{item.name}</h3>
-            <p>{item.price}</p>
+            <h3 className="shop-item-name">{item.name}</h3>
+            <Stars stars={item.star} />
+            <p>&euro;{item.price}</p>
           </Link>
         );
       })}

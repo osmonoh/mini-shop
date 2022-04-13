@@ -55,7 +55,7 @@ const products = [
   },
   {
     id: 7,
-    name: "BASKET WITH HANDLES",
+    name: "RATTAN BASKET",
     img: "https://www.ikea.com/de/de/images/products/lustigkurre-korb-naturfarben-seegras__0922225_pe788093_s5.jpg?f=xxxs",
     star: 4,
     price: 19,

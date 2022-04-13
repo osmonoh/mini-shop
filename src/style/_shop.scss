@@ -15,5 +15,17 @@
     &-img {
       margin-bottom: 40px;
     }
+
+    &-name {
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      margin-bottom: 8px;
+    }
+
+    .star {
+      fill: $yellow;
+    }
   }
 }
