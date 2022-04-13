@@ -1,26 +1,63 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header center-box">
       <h1 className="heading">MINI</h1>
       <nav className="navbar">
-        <Link to="/" className="navbar-link">
+        <NavLink
+          to="/"
+          className={(navData) =>
+            navData.isActive ? "navbar-link active-link" : "navbar-link"
+          }
+        >
           Home
-        </Link>
-        <Link to="./shop" className="navbar-link">
+        </NavLink>
+        <NavLink
+          to="./shop"
+          className={(navData) =>
+            navData.isActive ? "navbar-link active-link" : "navbar-link"
+          }
+        >
           Shop
-        </Link>
-        <Link to="/blog" className="navbar-link">
+        </NavLink>
+        <NavLink
+          to="/blog"
+          className={(navData) =>
+            navData.isActive ? "navbar-link active-link" : "navbar-link"
+          }
+        >
           Blog
-        </Link>
-        <Link to="/contact" className="navbar-link">
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={(navData) =>
+            navData.isActive ? "navbar-link active-link" : "navbar-link"
+          }
+        >
           Contact
-        </Link>
-        <Link to="/login" className="navbar-link">
-          Login/Register
-        </Link>
+        </NavLink>
+
+        <div className="log-reg">
+          <NavLink
+            to="/login"
+            className={(navData) =>
+              navData.isActive ? "navbar-link active-link" : "navbar-link"
+            }
+          >
+            Login
+          </NavLink>
+          /
+          <NavLink
+            to="/register"
+            className={(navData) =>
+              navData.isActive ? "navbar-link active-link" : "navbar-link"
+            }
+          >
+            Register
+          </NavLink>
+        </div>
       </nav>
     </header>
   );

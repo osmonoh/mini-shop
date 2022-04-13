@@ -26,5 +26,20 @@
         color: $heading-color;
       }
     }
+
+    .log-reg {
+      padding: 0.6rem 0;
+
+      .navbar-link:first-of-type {
+        padding-right: 0;
+      }
+      .navbar-link:last-of-type {
+        padding-left: 0;
+      }
+    }
+
+    .active-link {
+      color: $orange;
+    }
   }
 }
