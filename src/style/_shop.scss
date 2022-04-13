@@ -1,5 +1,5 @@
 .shop {
-  border-top: 1px solid $very-light-grey;
+  //   border-top: 1px solid $very-light-grey;
   padding: 120px 0;
   display: flex;
   flex-wrap: wrap;
@@ -22,10 +22,6 @@
 
     .stars {
       margin-bottom: 8px;
-    }
-
-    .star {
-      fill: $yellow;
     }
   }
 }
