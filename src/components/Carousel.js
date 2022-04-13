@@ -24,7 +24,7 @@ const Carousel = () => {
       <Slider {...settings}>
         {reviews.map((item) => {
           return (
-            <div className="carousel-card">
+            <div className="carousel-card" key={item.id}>
               <div className="carousel-card-text">
                 <p className="review">{item.text}</p>
                 <h3>{item.name}</h3>

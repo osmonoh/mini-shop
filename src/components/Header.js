@@ -1,25 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header center-box">
       <h1 className="heading">MINI</h1>
       <nav className="navbar">
-        <a href="#" className="navbar-link">
+        <Link to="/" className="navbar-link">
           Home
-        </a>
-        <a href="#" className="navbar-link">
+        </Link>
+        <Link to="./shop" className="navbar-link">
           Shop
-        </a>
-        <a href="#" className="navbar-link">
+        </Link>
+        <Link to="/blog" className="navbar-link">
           Blog
-        </a>
-        <a href="#" className="navbar-link">
-          Login/Register
-        </a>
-        <a href="#" className="navbar-link">
+        </Link>
+        <Link to="/contact" className="navbar-link">
           Contact
-        </a>
+        </Link>
+        <Link to="/login" className="navbar-link">
+          Login/Register
+        </Link>
       </nav>
     </header>
   );
