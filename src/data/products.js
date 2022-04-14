@@ -1,3 +1,13 @@
+const createId = () => {
+  const chars = "0123456789abcdefghijklmnopqrstuvwxyz";
+  const getRandom = () => Math.floor(Math.random() * chars.length);
+  let id = "";
+  while (id.length < 32) {
+    id += chars[getRandom()];
+  }
+  return id;
+};
+
 const products = [
   {
     id: 1,
