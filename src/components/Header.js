@@ -6,7 +6,7 @@ import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 
 const Header = () => {
-  const { inCart } = useContext(MyContext);
+  const { inCart, inFavs } = useContext(MyContext);
 
   return (
     <header className="header center-box">
@@ -78,7 +78,7 @@ const Header = () => {
         <Link to="/favs">
           <div className="indicator-container">
             <FiHeart className="heart-icon" />
-            <div className="badge">0</div>
+            <div className="badge">{inFavs.length}</div>
           </div>
         </Link>
       </div>

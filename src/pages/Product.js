@@ -6,6 +6,7 @@ const Product = () => {
   const { product } = useContext(MyContext);
   const { id, img, name, price, star, description } = product;
   const { inCart, setInCart } = useContext(MyContext);
+  const { inFavs, setInFavs } = useContext(MyContext);
 
   console.log(product);
 
@@ -22,7 +23,11 @@ const Product = () => {
     }
   };
 
-  console.log(inCart);
+  const onToFavsClick = () => {
+    if (!inFavs.some((item) => item.id === id)) setInFavs([...inFavs, product]);
+  };
+
+  console.log(inFavs);
 
   return (
     <div className="product center-box">
@@ -38,7 +43,9 @@ const Product = () => {
           <div className="product-btn to-cart-btn" onClick={onToCartClick}>
             add to cart
           </div>
-          <div className="product-btn to-wish-btn">add to wishlist</div>
+          <div className="product-btn to-wish-btn" onClick={onToFavsClick}>
+            add to wishlist
+          </div>
         </div>
       </div>
     </div>

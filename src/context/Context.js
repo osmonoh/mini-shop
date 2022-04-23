@@ -6,9 +6,12 @@ const Context = ({ children }) => {
     JSON.parse(sessionStorage.getItem("product")) || {}
   );
   const [inCart, setInCart] = useState([]);
+  const [inFavs, setInFavs] = useState([]);
 
   return (
-    <MyContext.Provider value={{ product, setProduct, inCart, setInCart }}>
+    <MyContext.Provider
+      value={{ product, setProduct, inCart, setInCart, inFavs, setInFavs }}
+    >
       {children}
     </MyContext.Provider>
   );
