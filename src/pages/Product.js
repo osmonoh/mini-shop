@@ -4,7 +4,25 @@ import { MyContext } from "../context/MyContext";
 
 const Product = () => {
   const { product } = useContext(MyContext);
-  const { img, name, price, star, description } = product;
+  const { id, img, name, price, star, description } = product;
+  const { inCart, setInCart } = useContext(MyContext);
+
+  console.log(product);
+
+  const onToCartClick = () => {
+    if (inCart.some((item) => item.id === id)) {
+      setInCart(
+        inCart.map((item) => {
+          if (item.id === id) return { ...item, amount: item.amount + 1 };
+          return item;
+        })
+      );
+    } else {
+      setInCart([...inCart, { ...product, amount: 1 }]);
+    }
+  };
+
+  console.log(inCart);
 
   return (
     <div className="product center-box">
@@ -17,7 +35,9 @@ const Product = () => {
         <Stars stars={star} />
         <p className="description">{description}</p>
         <div className="product-buttons">
-          <div className="product-btn to-cart-btn">add to cart</div>
+          <div className="product-btn to-cart-btn" onClick={onToCartClick}>
+            add to cart
+          </div>
           <div className="product-btn to-wish-btn">add to wishlist</div>
         </div>
       </div>

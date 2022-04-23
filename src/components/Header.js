@@ -1,7 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { MyContext } from "../context/MyContext";
+
+import { FiHeart } from "react-icons/fi";
+import { IoCartOutline } from "react-icons/io5";
 
 const Header = () => {
+  const { inCart } = useContext(MyContext);
+
   return (
     <header className="header center-box">
       <h1 className="heading">MINI</h1>
@@ -59,6 +65,21 @@ const Header = () => {
           </NavLink>
         </div>
       </nav>
+
+      <div className="header-indicators">
+        <Link to="/cart">
+          <div className="indicator-container">
+            <IoCartOutline className="cart-icon" />
+            <div className="badge">0</div>
+          </div>
+        </Link>
+        <Link to="/favs">
+          <div className="indicator-container">
+            <FiHeart className="heart-icon" />
+            <div className="badge">0</div>
+          </div>
+        </Link>
+      </div>
     </header>
   );
 };
