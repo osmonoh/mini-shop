@@ -70,7 +70,9 @@ const Header = () => {
         <Link to="/cart">
           <div className="indicator-container">
             <IoCartOutline className="cart-icon" />
-            <div className="badge">0</div>
+            <div className="badge">
+              {inCart.reduce((acc, item) => (acc += item.amount), 0)}
+            </div>
           </div>
         </Link>
         <Link to="/favs">
