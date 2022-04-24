@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 
+import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
+import { MdDelete } from "react-icons/md";
+
 const Cart = () => {
   const { inCart, setInCart } = useContext(MyContext);
 
@@ -33,17 +36,50 @@ const Cart = () => {
   console.log(inCart);
 
   return (
-    <div>
-      CART
-      {inCart.map((item) => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <p>{item.amount}</p>
-          <button onClick={() => onMinusClick(item)}>-</button>
-          <button onClick={() => onPlusClick(item)}>+</button>
-          <button onClick={() => onRemoveClick(item)}>remove</button>
-        </div>
-      ))}
+    <div className="cart center-box">
+      <div className="cart-list">
+        {inCart.map((item) => (
+          <div className="cart-list-item" key={item.id}>
+            <div className="cart-list-item-image">
+              <img src={item.img} alt={item.name} />
+            </div>
+            <div className="cart-list-item-content">
+              <div className="firstline">
+                <p>{item.name}</p>
+                <p>&euro;{item.price}</p>
+              </div>
+              <div className="lastline">
+                <div className="lastline-left">
+                  {/* <button
+                    className="btn-change"
+                    onClick={() => onMinusClick(item)}
+                  >
+                  </button> */}
+                  <AiFillMinusCircle
+                    className="btn-change"
+                    onClick={() => onMinusClick(item)}
+                  />
+                  <p>{item.amount}</p>
+                  {/* <button
+                    className="btn-change"
+                    onClick={() => onPlusClick(item)}
+                  >
+                  </button> */}
+                  <AiFillPlusCircle
+                    className="btn-change"
+                    onClick={() => onPlusClick(item)}
+                  />
+                </div>
+                <div className="lastline-right">
+                  {/* <button onClick={() => onRemoveClick(item)}>remove</button> */}
+                  <MdDelete onClick={() => onRemoveClick(item)} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="cart-total"></div>
     </div>
   );
 };
