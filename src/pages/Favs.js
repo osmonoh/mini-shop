@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ProductCard from "../components/ProductCard";
 import { MyContext } from "../context/MyContext";
 
 const Favs = () => {
@@ -9,15 +10,9 @@ const Favs = () => {
   };
 
   return (
-    <div>
-      FAVS
+    <div className="favs center-box">
       {inFavs.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>{item.name}</p>
-            <button onClick={() => onRemoveClick(item)}>remove</button>
-          </div>
-        );
+        return <ProductCard item={item} key={item.id} />;
       })}
     </div>
   );

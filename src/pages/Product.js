@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Stars from "../components/Stars";
 import { MyContext } from "../context/MyContext";
 
@@ -23,9 +23,17 @@ const Product = () => {
     }
   };
 
+  useEffect(() => {
+    localStorage.setItem("inCartMini", JSON.stringify(inCart));
+  }, [inCart]);
+
   const onToFavsClick = () => {
     if (!inFavs.some((item) => item.id === id)) setInFavs([...inFavs, product]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("inFavsMini", JSON.stringify(inFavs));
+  }, [inFavs]);
 
   console.log(inFavs);
 

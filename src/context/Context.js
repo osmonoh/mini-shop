@@ -3,10 +3,14 @@ import { MyContext } from "./MyContext";
 
 const Context = ({ children }) => {
   const [product, setProduct] = useState(
-    JSON.parse(sessionStorage.getItem("product")) || {}
+    JSON.parse(sessionStorage.getItem("productMini")) || {}
   );
-  const [inCart, setInCart] = useState([]);
-  const [inFavs, setInFavs] = useState([]);
+  const [inCart, setInCart] = useState(
+    JSON.parse(localStorage.getItem("inCartMini")) || []
+  );
+  const [inFavs, setInFavs] = useState(
+    JSON.parse(localStorage.getItem("inFavsMini")) || []
+  );
 
   return (
     <MyContext.Provider

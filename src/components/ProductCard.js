@@ -13,7 +13,7 @@ const ProductCard = ({ item }) => {
       className="shop-item"
       key={item.id}
       onClick={() => {
-        sessionStorage.setItem("product", JSON.stringify(item));
+        sessionStorage.setItem("productMini", JSON.stringify(item));
         setProduct(item);
       }}
     >

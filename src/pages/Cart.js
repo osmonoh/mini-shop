@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
 
@@ -34,6 +34,10 @@ const Cart = () => {
     setInCart(inCart.filter((el) => el.id !== product.id));
   };
 
+  useEffect(() => {
+    localStorage.setItem("inCartMini", JSON.stringify(inCart));
+  }, [inCart]);
+
   console.log(inCart);
 
   return (
@@ -46,7 +50,10 @@ const Cart = () => {
                 <Link
                   to={`/product/${item.id}`}
                   className="cart-list-item-image"
-                  onClick={() => setProduct(item)}
+                  onClick={() => {
+                    sessionStorage.setItem("productMini", JSON.stringify(item));
+                    setProduct(item);
+                  }}
                 >
                   <img src={item.img} alt={item.name} />
                 </Link>
@@ -57,28 +64,17 @@ const Cart = () => {
                   </div>
                   <div className="lastline">
                     <div className="lastline-left">
-                      {/* <button
-                    className="btn-change"
-                    onClick={() => onMinusClick(item)}
-                  >
-                  </button> */}
                       <AiFillMinusCircle
                         className="btn-change"
                         onClick={() => onMinusClick(item)}
                       />
                       <p>{item.amount}</p>
-                      {/* <button
-                    className="btn-change"
-                    onClick={() => onPlusClick(item)}
-                  >
-                  </button> */}
                       <AiFillPlusCircle
                         className="btn-change"
                         onClick={() => onPlusClick(item)}
                       />
                     </div>
                     <div className="lastline-right">
-                      {/* <button onClick={() => onRemoveClick(item)}>remove</button> */}
                       <MdDelete onClick={() => onRemoveClick(item)} />
                     </div>
                   </div>
