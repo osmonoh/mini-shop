@@ -1,10 +1,11 @@
 .cart {
   width: 100%;
+  padding: 0 0 120px;
   display: flex;
   gap: 40px;
 
   &-list {
-    width: 50%;
+    width: 60%;
 
     & > * + * {
       border-top: 1px solid $border-color;
@@ -44,6 +45,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            // color: white;
 
             .btn-change {
               //   width: 20px;
@@ -69,7 +71,85 @@
   }
 
   &-total {
-    width: 50%;
-    background-color: goldenrod;
+    width: 40%;
+    height: fit-content;
+    background-color: $hugely-light-grey;
+    padding: 45px 30px 30px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+
+    &-total,
+    &-amount {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-amount {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    &-total {
+      margin-bottom: 4rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &-disclaimer {
+      margin-bottom: 2rem;
+    }
+
+    &-btn {
+      background-color: $orange;
+      padding: 16px;
+      text-align: center;
+      color: $heading-color;
+      text-transform: capitalize;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 2px 2px 2px 0 #a0a0a0;
+      }
+
+      &:active {
+        box-shadow: inset 2px 2px 2px 0 #a0a0a0;
+        background-color: darken($orange, 4%);
+      }
+    }
+  }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-heading {
+      margin-bottom: 2.8rem;
+      font-size: 2.8rem;
+    }
+
+    &-btn {
+      border: 1px solid black;
+      padding: 14px 28px;
+      color: $heading-color;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 2px 2px 2px 0 #a0a0a0;
+      }
+
+      &:active {
+        box-shadow: inset 2px 2px 2px 0 #a0a0a0;
+        background-color: darken(white, 8%);
+      }
+    }
   }
 }
