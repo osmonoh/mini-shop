@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
-
 import Stars from "../components/Stars";
 
-const ProductCard = ({ item }) => {
-  const { setProduct } = useContext(MyContext);
+import { ImHeartBroken } from "react-icons/im";
+
+const ProductCard = ({ item, isFav, onRemoveClick }) => {
+  const { product, setProduct } = useContext(MyContext);
 
   return (
     <Link
@@ -17,6 +18,19 @@ const ProductCard = ({ item }) => {
         setProduct(item);
       }}
     >
+      {isFav && (
+        <ImHeartBroken
+          className="remove-btn"
+          onClick={(e) => {
+            console.log("click");
+            onRemoveClick(item);
+            e.preventDefault();
+            e.stopPropagation();
+            e.nativeEvent.stopImmediatePropagation();
+          }}
+        />
+      )}
+
       <div className="shop-item-img">
         <img src={item.img} alt={item.name} />
       </div>

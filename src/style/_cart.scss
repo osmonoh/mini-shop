@@ -1,7 +1,8 @@
 .cart {
   width: 100%;
-  padding: 0 0 120px;
+  padding: 60px 0 120px;
   display: flex;
+  justify-content: center;
   gap: 40px;
 
   &-list {
@@ -31,6 +32,8 @@
         .firstline {
           display: flex;
           justify-content: space-between;
+          color: $heading-color;
+          font-size: 1.8rem;
         }
 
         .lastline {
@@ -41,29 +44,24 @@
           &-left {
             border: 1px solid $border-color;
             border-radius: 46px;
-            padding: 8px 16px;
+            padding: 8px 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
+            font-family: "Roboto", sans-serif;
             // color: white;
 
             .btn-change {
-              //   width: 20px;
-              //   height: 20px;
-              //   border: none;
-              //   border-radius: 50%;
-              //   background-color: $heading-color;
-              //   color: white;
-              //   display: flex;
-              //   justify-content: center;
-              //   align-items: center;
-              fill: $heading-color;
-              //   color: white;
+              // fill: $heading-color;
+              font-size: 2rem;
+              cursor: pointer;
             }
           }
 
           &-right {
-            color: $heading-color;
+            // color: $heading-color;
+            font-size: 2rem;
+            cursor: pointer;
           }
         }
       }
@@ -123,6 +121,7 @@
   }
 
   &-empty {
+    padding: 60px 0 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -4,4 +4,46 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+
+  & > * {
+    position: relative;
+  }
+
+  .remove-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2rem;
+  }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-heading {
+      margin-bottom: 2.8rem;
+      font-size: 2.8rem;
+    }
+
+    &-btn {
+      border: 1px solid black;
+      padding: 14px 28px;
+      color: $heading-color;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 2px 2px 2px 0 #a0a0a0;
+      }
+
+      &:active {
+        box-shadow: inset 2px 2px 2px 0 #a0a0a0;
+        background-color: darken(white, 8%);
+      }
+    }
+  }
 }

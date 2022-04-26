@@ -1,12 +1,16 @@
 import React, { useContext, useEffect } from "react";
-import Stars from "../components/Stars";
+import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
+import Stars from "../components/Stars";
+
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Product = () => {
   const { product } = useContext(MyContext);
   const { id, img, name, price, star, description } = product;
   const { inCart, setInCart } = useContext(MyContext);
   const { inFavs, setInFavs } = useContext(MyContext);
+  const navigate = useNavigate();
 
   console.log(product);
 
@@ -39,6 +43,10 @@ const Product = () => {
 
   return (
     <div className="product center-box">
+      <div className="back-arrow" onClick={() => navigate(-1)}>
+        <AiOutlineArrowLeft />
+      </div>
+
       <div className="product-img">
         <img src={img} alt={name} />
       </div>
