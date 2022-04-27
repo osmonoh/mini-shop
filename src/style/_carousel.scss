@@ -1,5 +1,14 @@
 .carousel {
+  // max-width: 100%;
   margin-bottom: 40px;
+
+  .slick-slider {
+    overflow: hidden !important;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
 
   &-card {
     width: 100%;

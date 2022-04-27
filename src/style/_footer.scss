@@ -3,11 +3,18 @@
   border-top: 1px solid $very-light-grey;
 
   &-links {
-    padding: 48px 0;
+    padding: 48px 16px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 20px;
 
     &-column {
+      @media (max-width: 600px) {
+        width: 146px;
+        margin-bottom: 30px;
+      }
+
       h3 {
         margin-bottom: 20px;
         font-size: 1.8rem;
@@ -27,6 +34,6 @@
 
   &-copyright {
     border-top: 1px solid $very-light-grey;
-    padding: 16px 0;
+    padding: 16px;
   }
 }

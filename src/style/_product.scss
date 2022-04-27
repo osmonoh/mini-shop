@@ -6,6 +6,10 @@
   align-items: center;
   gap: 80px;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
   .back-arrow {
     position: absolute;
     top: 20px;
@@ -31,6 +35,11 @@
   &-content {
     flex-basis: 50%;
 
+    @media (max-width: 600px) {
+      padding: 16px;
+      text-align: center;
+    }
+
     h2 {
       margin-bottom: 12px;
     }
@@ -51,7 +60,12 @@
 
   &-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+
+    @media (max-width: 600px) {
+      justify-content: center;
+    }
 
     .product-btn {
       width: 18rem;

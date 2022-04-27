@@ -20,6 +20,10 @@
     display: flex;
     justify-content: space-evenly;
 
+    // @media (max-width: 600px) {
+    //   display: none;
+    // }
+
     &-link {
       padding: 0.6rem;
 
@@ -49,11 +53,19 @@
     top: 80px;
     right: 22px;
 
+    @media (max-width: 600px) {
+      top: 22px;
+    }
+
     .indicator-container {
       position: relative;
       margin-bottom: 1.6rem;
       padding: 6px;
       color: $heading-color;
+
+      @media (max-width: 600px) {
+        margin-bottom: 0.6rem;
+      }
 
       svg {
         display: block;
