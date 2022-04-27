@@ -85,5 +85,9 @@
         font-weight: bold;
       }
     }
+
+    .active-icon svg {
+      color: $orange;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
 
 import { FiHeart } from "react-icons/fi";
@@ -7,6 +7,10 @@ import { IoCartOutline } from "react-icons/io5";
 
 const Header = () => {
   const { inCart, inFavs } = useContext(MyContext);
+
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <header className="header center-box">
@@ -67,20 +71,26 @@ const Header = () => {
       </nav>
 
       <div className="header-indicators">
-        <Link to="/cart">
+        <NavLink
+          to="/cart"
+          className={(navData) => (navData.isActive ? "active-icon" : "")}
+        >
           <div className="indicator-container">
             <IoCartOutline className="cart-icon" />
             <div className="badge">
               {inCart.reduce((acc, item) => (acc += item.amount), 0)}
             </div>
           </div>
-        </Link>
-        <Link to="/favs">
+        </NavLink>
+        <NavLink
+          to="/favs"
+          className={(navData) => (navData.isActive ? "active-icon" : "")}
+        >
           <div className="indicator-container">
             <FiHeart className="heart-icon" />
             <div className="badge">{inFavs.length}</div>
           </div>
-        </Link>
+        </NavLink>
       </div>
     </header>
   );
