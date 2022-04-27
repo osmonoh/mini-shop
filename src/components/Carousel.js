@@ -20,24 +20,24 @@ const Carousel = () => {
   };
 
   return (
-    // <div className="carousel">
-
-    <Slider {...settings} className="carousel">
-      {reviews.map((item) => {
-        return (
-          <div className="carousel-card" key={item.id}>
-            <div className="carousel-card-text">
-              <p className="review">{item.text}</p>
-              <h3>{item.name}</h3>
-              <p>{item.job}</p>
+    <div className="carousel">
+      <Slider {...settings}>
+        {reviews.map((item) => {
+          return (
+            <div className="carousel-card" key={item.id}>
+              <div className="carousel-card-text">
+                <p className="review">{item.text}</p>
+                <h3>{item.name}</h3>
+                <p>{item.job}</p>
+              </div>
+              <div className="carousel-card-image">
+                <img src={item.image} alt="user photo" />
+              </div>
             </div>
-            <div className="carousel-card-image">
-              <img src={item.image} alt="user photo" />
-            </div>
-          </div>
-        );
-      })}
-    </Slider>
+          );
+        })}
+      </Slider>
+    </div>
   );
 };
 
