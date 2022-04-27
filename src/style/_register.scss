@@ -1,0 +1,62 @@
+.register {
+  min-width: 520px;
+  margin-bottom: 40px;
+  background-color: $very-light-yellow;
+  padding: 40px 60px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 2.8rem;
+    font-size: 2.8rem;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 1.6rem;
+      border: 1px solid $border-color;
+      padding: 1.6rem;
+      font-size: 1.6rem;
+
+      &:last-of-type {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    p {
+      margin-bottom: 3.2rem;
+      //   font-size: 1.4rem;
+
+      a {
+        color: $heading-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .btn-register {
+      border: none;
+      background-color: $orange;
+      padding: 1.8rem;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 2px 2px 2px 0 #a0a0a0;
+      }
+
+      &:active {
+        box-shadow: inset 2px 2px 2px 0 #a0a0a0;
+        background-color: darken($orange, 8%);
+      }
+    }
+  }
+}
