@@ -25,9 +25,24 @@
       border: 1px solid $border-color;
       padding: 1.6rem;
       font-size: 1.6rem;
+    }
 
-      &:last-of-type {
+    .password-input {
+      position: relative;
+
+      input {
+        width: 100%;
         margin-bottom: 0.8rem;
+      }
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translate(0, -50%);
+        padding: 4px;
+        font-size: 2.6rem;
+        cursor: pointer;
       }
     }
 
