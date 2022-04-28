@@ -54,7 +54,10 @@
     right: 22px;
 
     @media (max-width: 600px) {
-      top: 22px;
+      position: absolute;
+      top: 36px;
+      display: flex;
+      gap: 6px;
     }
 
     .indicator-container {

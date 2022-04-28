@@ -4,10 +4,15 @@
   .hero {
     &-gallery {
       margin-bottom: 40px;
+      padding: 0 16px;
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 35vh 35vh;
       gap: 24px;
+
+      @media (max-width: 600px) {
+        display: block;
+      }
 
       &-tile:first-of-type {
         grid-column: 1 / 2;
@@ -17,11 +22,19 @@
       &-tile:nth-of-type(2) {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
 
       &-tile:nth-of-type(3) {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
 
       img {
