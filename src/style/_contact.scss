@@ -41,6 +41,7 @@
         }
 
         input {
+          width: 100%;
           border: none;
           border-bottom: 1px solid $border-color;
           padding: 0.8rem 3.2rem;
@@ -56,6 +57,7 @@
 
       textarea {
         display: block;
+        width: 100%;
         margin-bottom: 3.2rem;
         border: 1px solid $border-color;
         padding: 1.6rem 0.8rem;
